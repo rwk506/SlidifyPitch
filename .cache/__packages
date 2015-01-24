@@ -1,12 +1,7 @@
 base
-datasets
 ggplot2
-graphics
-grDevices
-methods
 shiny
 slidify
-stats
-utils
+slidifyLibraries
 whisker
 yaml

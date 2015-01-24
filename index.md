@@ -22,6 +22,10 @@ In this project, we explore the relationships between six different measured ind
 
 The data utilized is from around 1888, only about 40 years after civil war ended and the Federal Constitution established. In the 1870's, Switzerland's government increased the distinction between Church and State, taking many of the previously-held power of the church into that of the government's jurisdiction. While immigration and emigration were balanced in the country for some time, emigration from Switzerland reached its peak in the late 1880's. After this, immigration overtook emigration and a demographic transition occurred. Switzerland's fertility was beginning to fall from the high level typical of underdeveloped countries and move into the modern era.
 
+[*Shiny App*](https://rwk506.shinyapps.io/Project/)</br>
+[*App Github Pages*](https://github.com/rwk506/ShinyProject)</br>
+[*Slidify Github Pages*](https://github.com/rwk506/SlidifyPitch/tree/master)
+
 
 
 ---<section data-background="image.png">
@@ -63,18 +67,7 @@ An example of one of the possible plots that can be made with the Shiny app is s
 
 
 ```r
-library(ggplot2)
-```
-
-```
-## Warning: package 'ggplot2' was built under R version 3.0.2
-```
-
-```
-## Use suppressPackageStartupMessages to eliminate package startup messages.
-```
-
-```r
+suppressPackageStartupMessages(library(ggplot2))
 p = ggplot(data=swiss, aes(Fertility,Infant.Mortality, color = Catholic))
     p = p + geom_point() + xlab("Infant.Mortality") + ylab("Fertility")
     print(p)

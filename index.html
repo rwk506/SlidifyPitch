@@ -42,6 +42,10 @@
 
 <p>The data utilized is from around 1888, only about 40 years after civil war ended and the Federal Constitution established. In the 1870&#39;s, Switzerland&#39;s government increased the distinction between Church and State, taking many of the previously-held power of the church into that of the government&#39;s jurisdiction. While immigration and emigration were balanced in the country for some time, emigration from Switzerland reached its peak in the late 1880&#39;s. After this, immigration overtook emigration and a demographic transition occurred. Switzerland&#39;s fertility was beginning to fall from the high level typical of underdeveloped countries and move into the modern era.</p>
 
+<p><a href="https://rwk506.shinyapps.io/Project/"><em>Shiny App</em></a></br>
+<a href="https://github.com/rwk506/ShinyProject"><em>App Github Pages</em></a></br>
+<a href="https://github.com/rwk506/SlidifyPitch/tree/master"><em>Slidify Github Pages</em></a></p>
+
     </section>
     
   </div><!-- inner -->
@@ -69,6 +73,10 @@ In this project, we explore the relationships between six different measured ind
 *Background*:
 
 The data utilized is from around 1888, only about 40 years after civil war ended and the Federal Constitution established. In the 1870's, Switzerland's government increased the distinction between Church and State, taking many of the previously-held power of the church into that of the government's jurisdiction. While immigration and emigration were balanced in the country for some time, emigration from Switzerland reached its peak in the late 1880's. After this, immigration overtook emigration and a demographic transition occurred. Switzerland's fertility was beginning to fall from the high level typical of underdeveloped countries and move into the modern era.
+
+[*Shiny App*](https://rwk506.shinyapps.io/Project/)&lt;/br&gt;
+[*App Github Pages*](https://github.com/rwk506/ShinyProject)&lt;/br&gt;
+[*Slidify Github Pages*](https://github.com/rwk506/SlidifyPitch/tree/master)
 
 
       </code></pre>
@@ -189,9 +197,9 @@ We aim to explore the relationships between six different measured indicators fo
 The application developed and deployed by Shiny and R allows exploration of these relationships. The available capabilities of the app are:</p>
 
 <ul>
-<li>able to plot a user-chosen x-variable and y-variable (out of Fertility, Agriculture, or Infant.Mortality)</li>
-<li>colors of the plotted points can be changed to reflect the value and trend of an additional variable (Education, Examination, or Catholic)</li>
-<li>a simple linear regression can be fit to the plotted x and y variables (results will be printed and plotted)</li>
+<li>Able to plot a user-chosen x-variable and y-variable (out of Fertility, Agriculture, or Infant.Mortality)</li>
+<li>Colors of the plotted points can be changed to reflect the value and trend of an additional variable (Education, Examination, or Catholic)</li>
+<li>A simple linear regression can be fit to the plotted x and y variables. Results will be plotted; slope, intercept, and R-value are also printed below the plot (note: the fit is NOT by group)</li>
 </ul>
 
     </section>
@@ -219,9 +227,9 @@ We aim to explore the relationships between six different measured indicators fo
 
 **The Shiny App**:
 The application developed and deployed by Shiny and R allows exploration of these relationships. The available capabilities of the app are:
-- able to plot a user-chosen x-variable and y-variable (out of Fertility, Agriculture, or Infant.Mortality)
-- colors of the plotted points can be changed to reflect the value and trend of an additional variable (Education, Examination, or Catholic)
-- a simple linear regression can be fit to the plotted x and y variables (results will be printed and plotted)
+- Able to plot a user-chosen x-variable and y-variable (out of Fertility, Agriculture, or Infant.Mortality)
+- Colors of the plotted points can be changed to reflect the value and trend of an additional variable (Education, Examination, or Catholic)
+- A simple linear regression can be fit to the plotted x and y variables. Results will be plotted; slope, intercept, and R-value are also printed below the plot (note: the fit is NOT by group)
 
       </code></pre>
     </div>
@@ -255,7 +263,7 @@ The application developed and deployed by Shiny and R allows exploration of thes
     <section>
       <p>An example of one of the possible plots that can be made with the Shiny app is shown below, with Fertility plotted against Infant Mortality, grouped by the Catholic variable. A distinction can be seen between the two groupings and more can be learned when exploring the dataset in the app.</p>
 
-<pre><code class="r">library(ggplot2)
+<pre><code class="r">suppressPackageStartupMessages(library(ggplot2))
 p = ggplot(data=swiss, aes(Fertility,Infant.Mortality, color = Catholic))
     p = p + geom_point() + xlab(&quot;Infant.Mortality&quot;) + ylab(&quot;Fertility&quot;)
     print(p)
@@ -283,7 +291,7 @@ p = ggplot(data=swiss, aes(Fertility,Infant.Mortality, color = Catholic))
 An example of one of the possible plots that can be made with the Shiny app is shown below, with Fertility plotted against Infant Mortality, grouped by the Catholic variable. A distinction can be seen between the two groupings and more can be learned when exploring the dataset in the app.
 
 ```{r fig.width=6, fig.height=3.8}
-library(ggplot2)
+suppressPackageStartupMessages(library(ggplot2))
 p = ggplot(data=swiss, aes(Fertility,Infant.Mortality, color = Catholic))
     p = p + geom_point() + xlab(&quot;Infant.Mortality&quot;) + ylab(&quot;Fertility&quot;)
     print(p)

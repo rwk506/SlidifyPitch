@@ -52,9 +52,9 @@ We aim to explore the relationships between six different measured indicators fo
 
 **The Shiny App**:
 The application developed and deployed by Shiny and R allows exploration of these relationships. The available capabilities of the app are:
-- able to plot a user-chosen x-variable and y-variable (out of Fertility, Agriculture, or Infant.Mortality)
-- colors of the plotted points can be changed to reflect the value and trend of an additional variable (Education, Examination, or Catholic)
-- a simple linear regression can be fit to the plotted x and y variables (results will be printed and plotted)
+- Able to plot a user-chosen x-variable and y-variable (out of Fertility, Agriculture, or Infant.Mortality)
+- Colors of the plotted points can be changed to reflect the value and trend of an additional variable (Education, Examination, or Catholic)
+- A simple linear regression can be fit to the plotted x and y variables. Results will be plotted; slope, intercept, and R-value are also printed below the plot (note: the fit is NOT by group)
 
 
 ---
@@ -64,6 +64,17 @@ An example of one of the possible plots that can be made with the Shiny app is s
 
 ```r
 library(ggplot2)
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 3.0.2
+```
+
+```
+## Use suppressPackageStartupMessages to eliminate package startup messages.
+```
+
+```r
 p = ggplot(data=swiss, aes(Fertility,Infant.Mortality, color = Catholic))
     p = p + geom_point() + xlab("Infant.Mortality") + ylab("Fertility")
     print(p)
